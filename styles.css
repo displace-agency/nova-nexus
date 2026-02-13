@@ -1950,11 +1950,11 @@ a { text-decoration: none; color: inherit; }
   .hero__heading { text-align: left; }
 
   /* Footer — compact */
-  .footer { padding: 48px 16px 16px; }
+  .footer { padding: 48px 16px 16px; align-items: flex-start; }
   .footer__brand-name { font-size: 28px; }
   .footer__brand-desc { font-size: 16px; }
   .footer__nav { flex-direction: column; gap: 16px; }
-  .footer__nav-col { gap: 8px; }
+  .footer__nav-col { flex: none; gap: 8px; }
   .footer__nav-links { gap: 8px; }
   .footer__inner { gap: 24px; }
   .footer__brand-desc { margin-top: 12px; }
