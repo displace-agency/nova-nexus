@@ -99,8 +99,7 @@ class NovaNavbar extends HTMLElement {
           <img src="images/logo.svg" alt="Nova Nexus" width="146" height="32">
         </a>
         <div class="navbar__links">
-          <a href="index.html" class="navbar__link">About Us</a>
-          <a href="#" class="navbar__link">Solutions</a>
+          <a href="index.html" class="navbar__link">Home</a>
           <a href="contact.html" class="navbar__link">Contact</a>
         </div>
       </div>
@@ -127,22 +126,21 @@ class NovaFooter extends HTMLElement {
         </div>
         <div class="footer__brand">
           <h2 class="footer__brand-name">Nova Nexus</h2>
-          <p class="footer__brand-desc">Conectamos industrias estratégicas con la mejor tecnología del mundo.</p>
+          <p class="footer__brand-desc">Facilitamos la adopción de tecnología de clase mundial en industrias estratégicas.</p>
         </div>
         <nav class="footer__nav">
           <div class="footer__nav-col">
             <span class="footer__nav-label">/NAVIGATION</span>
             <div class="footer__nav-links">
               <a href="index.html">Home</a>
-              <a href="#">Nosotros</a>
               <a href="contact.html">Contact</a>
             </div>
           </div>
           <div class="footer__nav-col">
             <span class="footer__nav-label">/LEGAL</span>
             <div class="footer__nav-links">
-              <a href="#">Terms of Services</a>
-              <a href="#">Privacy Policy</a>
+              <a href="terms.html">Términos de Servicio</a>
+              <a href="privacy.html">Política de Privacidad</a>
             </div>
           </div>
           <div class="footer__nav-col">
@@ -161,7 +159,7 @@ class NovaFooter extends HTMLElement {
           </div>
         </nav>
         <div class="footer__bottom">
-          <span class="footer__copyright">@2026 NOVA NEXUS. All Rights Reserved. • Privacy Policy • Terms of Service</span>
+          <span class="footer__copyright">@2026 NOVA NEXUS. All Rights Reserved. • <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></span>
         </div>
       </div>
     `;
