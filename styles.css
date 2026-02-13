@@ -176,6 +176,8 @@ a { text-decoration: none; color: inherit; }
   background: var(--lavender);
   color: var(--blue);
   border-radius: 4px;
+  width: auto;
+  min-width: 187px;
 }
 .btn--light .btn__icon { background: var(--lavender); border-radius: 25.6px; }
 .btn--light .btn__icon svg path { stroke: var(--blue); }
@@ -274,7 +276,7 @@ a { text-decoration: none; color: inherit; }
 .hero__heading {
   font-size: clamp(36px, 4.5vw, 64px);
   font-weight: 500;
-  line-height: 57.6px;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   color: rgba(15, 17, 42, 0.70);
   max-width: 914px;
@@ -769,7 +771,7 @@ a { text-decoration: none; color: inherit; }
 .approach__card-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ============================================
@@ -811,9 +813,16 @@ a { text-decoration: none; color: inherit; }
 .process__cards {
   display: flex;
   gap: 14px;
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
   flex: 1;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.process__cards::-webkit-scrollbar { display: none; }
+.process__cards:active { cursor: grabbing; }
 .process__card {
   width: 280px;
   min-width: 280px;
@@ -1356,6 +1365,7 @@ a { text-decoration: none; color: inherit; }
   display: inline-block;
   overflow: hidden;
   vertical-align: bottom;
+  padding-bottom: 6px;
 }
 .hero-word {
   display: inline-block;
@@ -1782,7 +1792,7 @@ a { text-decoration: none; color: inherit; }
 
   /* Hero */
   .hero { min-height: auto; padding-top: 88px; }
-  .hero__heading { font-size: 48px; line-height: 48px; }
+  .hero__heading { font-size: 48px; line-height: 1.05; }
   .hero__bottom { flex-direction: column; align-items: flex-start; gap: 40px; }
   .hero__content { max-width: 100%; }
   .hero__visual { max-width: 100%; flex-basis: auto; height: 320px; aspect-ratio: auto; }
@@ -1862,7 +1872,7 @@ a { text-decoration: none; color: inherit; }
 
   /* Hero */
   .hero { padding-top: 80px; min-height: auto; }
-  .hero__heading { font-size: 36px; line-height: 36px; }
+  .hero__heading { font-size: 36px; line-height: 1.05; }
   .hero__subtitle { font-size: 16px; line-height: 22px; }
   .hero__visual { height: 260px; }
   .hero__buttons { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -1966,7 +1976,7 @@ a { text-decoration: none; color: inherit; }
   :root { --section-pad: 32px; }
 
   /* Hero */
-  .hero__heading { font-size: 28px; line-height: 28px; }
+  .hero__heading { font-size: 28px; line-height: 1.05; }
   .hero__visual { height: 200px; }
   .hero__subtitle { font-size: 14px; line-height: 20px; }
 

@@ -161,35 +161,30 @@ document.querySelectorAll('.approach__stat-value').forEach(el => {
 
 
 /* ═══════════════════════════════════════
-   PROCESS — Auto-scrolling marquee (homepage only)
+   PROCESS — Drag-to-scroll carousel (homepage only)
    ═══════════════════════════════════════ */
 
 const processCardsContainer = document.querySelector('.process__cards');
-let processTween = null;
 
 if (processCardsContainer) {
-  const origProcessCards = [...processCardsContainer.querySelectorAll('.process__card')];
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-  for (let i = 0; i < 2; i++) {
-    origProcessCards.forEach(card => processCardsContainer.appendChild(card.cloneNode(true)));
-  }
-
-  function initProcessMarquee() {
-    if (processTween) processTween.kill();
-    const gap = parseFloat(window.getComputedStyle(processCardsContainer).gap) || 14;
-    const oneSetWidth = origProcessCards.reduce((sum, card) => {
-      return sum + card.getBoundingClientRect().width + gap;
-    }, 0);
-    gsap.set(processCardsContainer, { x: 0 });
-    processTween = gsap.to(processCardsContainer, {
-      x: -oneSetWidth,
-      duration: 30,
-      ease: 'none',
-      repeat: -1,
-    });
-  }
-
-  initProcessMarquee();
+  processCardsContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - processCardsContainer.offsetLeft;
+    scrollLeft = processCardsContainer.scrollLeft;
+  });
+  processCardsContainer.addEventListener('mouseleave', () => { isDown = false; });
+  processCardsContainer.addEventListener('mouseup', () => { isDown = false; });
+  processCardsContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - processCardsContainer.offsetLeft;
+    const walk = (x - startX) * 2;
+    processCardsContainer.scrollLeft = scrollLeft - walk;
+  });
 }
 
 // Recalculate marquees on resize (debounced)
@@ -197,7 +192,6 @@ window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
     if (typeof initMarquee === 'function') initMarquee();
-    if (typeof initProcessMarquee === 'function') initProcessMarquee();
   }, 250);
 });
 

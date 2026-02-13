@@ -20,7 +20,13 @@ class NovaBtn extends HTMLElement {
 
     const el = document.createElement(tag);
     el.className = `btn btn--${variant}`;
-    if (href) el.setAttribute('href', href);
+    if (href) {
+      el.setAttribute('href', href);
+      if (href.startsWith('http')) {
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      }
+    }
 
     if (variant === 'link') {
       el.innerHTML = `<span>${text}</span>${ARROW_SVG}`;
