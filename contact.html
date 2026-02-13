@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Nexus — Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Inter:wght@400;500&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nova-navbar></nova-navbar>
+
+  <!-- ════════════════════════════════════════════
+       CONTACT HERO
+       ════════════════════════════════════════════ -->
+  <section class="contact-hero">
+    <div class="contact-hero__inner">
+      <div class="contact-hero__top">
+        <h1 class="contact-hero__heading">¿Tienes Preguntas?</h1>
+      </div>
+      <div class="contact-hero__bottom">
+        <div class="contact-hero__content">
+          <p class="contact-hero__subtitle">Estamos aquí para ayudarte. Agenda una conversación, envíanos un mensaje, o llámanos directamente.<br><br>Sin compromiso, sin presión.</p>
+          <div class="contact-hero__buttons">
+            <nova-btn variant="white-blue">Agenda una Consulta</nova-btn>
+          </div>
+        </div>
+        <div class="contact-hero__visual">
+          <img src="images/hero-contact.png" alt="" width="517" height="429">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CONTACT FORM
+       ════════════════════════════════════════════ -->
+  <section class="contact-form-section">
+    <div class="contact-form-section__inner">
+      <div class="contact-form-section__title">
+        <nova-tag variant="blue">CONTácta con nosotros</nova-tag>
+        <h2 class="contact-form-section__heading">Cuéntanos</h2>
+      </div>
+      <div class="contact-form-section__form-wrap">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-name">Nombre completo</label>
+            <input type="text" id="cf-name" name="nombre" class="contact-form__input" required>
+            <span class="contact-form__error">Este campo es obligatorio</span>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-email">EMAIL</label>
+            <input type="email" id="cf-email" name="email" class="contact-form__input" required>
+            <span class="contact-form__error">Ingresa un email válido</span>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-empresa">EMPRESA</label>
+            <input type="text" id="cf-empresa" name="empresa" class="contact-form__input">
+          </div>
+          <div class="contact-form__row">
+            <div class="contact-form__field contact-form__field--half">
+              <label class="contact-form__label" for="cf-cargo">Cargo</label>
+              <input type="text" id="cf-cargo" name="cargo" class="contact-form__input">
+            </div>
+            <div class="contact-form__field contact-form__field--half">
+              <label class="contact-form__label" for="cf-tel">Teléfono</label>
+              <input type="tel" id="cf-tel" name="telefono" class="contact-form__input">
+            </div>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-tipo">Tipo de consulta</label>
+            <select id="cf-tipo" name="tipo_consulta" class="contact-form__select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="demo">Agendar Demo</option>
+              <option value="consulta">Consulta General</option>
+              <option value="partner">Programa de Partners</option>
+              <option value="soporte">Soporte Técnico</option>
+              <option value="otro">Otro</option>
+            </select>
+            <span class="contact-form__error">Selecciona un tipo de consulta</span>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="cf-mensaje">Mensaje</label>
+            <textarea id="cf-mensaje" name="mensaje" class="contact-form__textarea" rows="4" required></textarea>
+            <span class="contact-form__error">Escribe un mensaje</span>
+          </div>
+          <button type="submit" class="contact-form__submit" id="cf-submit">
+            <span>Contactar</span>
+            <span class="contact-form__submit-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8H12.67M12.67 8L8 3.33M12.67 8L8 12.67" stroke="white" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+        </form>
+        <div class="contact-form__success" id="contactSuccess">
+          <div class="contact-form__success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#2B40F5"/><path d="M15 24L21 30L33 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="contact-form__success-title">Mensaje enviado</h3>
+          <p class="contact-form__success-desc">Gracias por contactarnos. Te responderemos a la brevedad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CTA (shared component — same as homepage)
+       ════════════════════════════════════════════ -->
+  <section class="cta">
+    <div class="cta__inner">
+      <div style="width:100%;">
+        <h2 class="h2 h2--center" style="color:var(--lavender);">¿Listo para transformar tu industria?</h2>
+      </div>
+      <div class="cta__block">
+        <p class="cta__subtitle">30 minutos. Sin compromiso. Descubre cómo podemos ayudarte.</p>
+        <div class="cta__buttons">
+          <nova-btn variant="cta-white">Agendar Demo</nova-btn>
+          <nova-btn variant="dark">Enviar Consulta</nova-btn>
+        </div>
+      </div>
+      <div class="cta__partner">
+        <p class="cta__subtitle">¿Eres un proveedor de tecnología y quieres expandir tu alcance?</p>
+        <nova-btn variant="link">Conviértete en Partner</nova-btn>
+      </div>
+    </div>
+  </section>
+
+  <nova-footer></nova-footer>
+
+  <script src="components.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    /* ── Contact Form — Validation & Submission ── */
+    const form = document.getElementById('contactForm');
+    const successEl = document.getElementById('contactSuccess');
+
+    if (form) {
+      // Check if all required fields are filled (lights up button)
+      function checkFormValidity() {
+        let allFilled = true;
+        form.querySelectorAll('[required]').forEach(input => {
+          const val = input.value.trim();
+          if (!val) allFilled = false;
+          if (input.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) allFilled = false;
+        });
+        form.classList.toggle('contact-form--valid', allFilled);
+      }
+
+      // Listen for input on all fields
+      form.querySelectorAll('input, select, textarea').forEach(input => {
+        input.addEventListener('input', () => {
+          input.closest('.contact-form__field')?.classList.remove('contact-form__field--invalid');
+          checkFormValidity();
+        });
+        input.addEventListener('change', () => {
+          input.closest('.contact-form__field')?.classList.remove('contact-form__field--invalid');
+          checkFormValidity();
+        });
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        // Clear previous errors
+        form.querySelectorAll('.contact-form__field--invalid').forEach(f =>
+          f.classList.remove('contact-form__field--invalid')
+        );
+
+        // Validate required fields
+        form.querySelectorAll('[required]').forEach(input => {
+          const field = input.closest('.contact-form__field');
+          const val = input.value.trim();
+
+          if (!val) {
+            field.classList.add('contact-form__field--invalid');
+            valid = false;
+          }
+          if (input.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            field.classList.add('contact-form__field--invalid');
+            valid = false;
+          }
+        });
+
+        if (!valid) {
+          const firstError = form.querySelector('.contact-form__field--invalid');
+          if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        // Collect form data
+        const data = Object.fromEntries(new FormData(form));
+
+        // Disable button during send
+        const btn = document.getElementById('cf-submit');
+        btn.disabled = true;
+        btn.querySelector('span:first-child').textContent = 'Enviando...';
+
+        // Simulate send (replace with real API endpoint)
+        setTimeout(() => {
+          console.log('Form data:', data);
+          form.style.display = 'none';
+          successEl.classList.add('contact-form__success--visible');
+          gsap.from(successEl, { y: 20, opacity: 0, duration: 0.6, ease: 'power2.out' });
+        }, 800);
+      });
+    }
+  </script>
+</body>
+</html>
