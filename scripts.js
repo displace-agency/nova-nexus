@@ -1,6 +1,40 @@
 gsap.registerPlugin(ScrollTrigger);
 
 /* ═══════════════════════════════════════
+   PAGE TRANSITION — Subtle navy fade
+   ═══════════════════════════════════════ */
+
+const pageOverlay = document.querySelector('.page-transition');
+if (pageOverlay) {
+  gsap.to(pageOverlay, {
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power2.out',
+    delay: 0.05,
+    onComplete() { pageOverlay.style.visibility = 'hidden'; },
+  });
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
+    const current = location.pathname.split('/').pop() || 'index.html';
+    if (href === current) return;
+    e.preventDefault();
+    pageOverlay.style.visibility = 'visible';
+    pageOverlay.style.pointerEvents = 'all';
+    gsap.to(pageOverlay, {
+      opacity: 1,
+      duration: 0.35,
+      ease: 'power2.in',
+      onComplete() { window.location.href = href; },
+    });
+  });
+}
+
+
+/* ═══════════════════════════════════════
    HERO — Staggered reveal (homepage only)
    ═══════════════════════════════════════ */
 
@@ -309,8 +343,7 @@ if (ctaSection) {
     scrollTrigger: { trigger: '.cta__buttons', start: 'top 90%' },
     y: 20,
     opacity: 0,
-    duration: 0.5,
-    stagger: 0.12,
+    duration: 0.6,
     ease: 'power2.out',
   });
 

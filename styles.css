@@ -31,6 +31,15 @@ img { display: block; max-width: 100%; }
 button { cursor: pointer; border: none; font-family: inherit; }
 a { text-decoration: none; color: inherit; }
 
+/* ── Page Transition Overlay ── */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--navy);
+  pointer-events: none;
+}
+
 /* ── Navbar ── */
 .navbar {
   position: absolute;
@@ -734,6 +743,22 @@ a { text-decoration: none; color: inherit; }
   line-height: 25px;
   letter-spacing: -0.36px;
   color: var(--white);
+}
+.approach__impact {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--blue);
+  background: rgba(43, 64, 245, 0.08);
+  border-radius: 0 8px 8px 0;
+}
+.approach__impact-text {
+  font-size: 15px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  color: var(--lavender);
+  font-style: italic;
 }
 .approach__card-right {
   flex: 1;
@@ -1740,7 +1765,7 @@ a { text-decoration: none; color: inherit; }
   .hero__heading { font-size: 36px; line-height: 36px; }
   .hero__subtitle { font-size: 16px; line-height: 22px; }
   .hero__visual { height: 260px; }
-  .hero__buttons { flex-direction: column; align-items: center; gap: 12px; }
+  .hero__buttons { flex-direction: column; align-items: flex-start; gap: 12px; }
 
   /* Tech Stack */
   .tech-stack { padding: 0 16px 48px; }
@@ -1794,8 +1819,8 @@ a { text-decoration: none; color: inherit; }
   .faq__answer { padding: 0 16px; }
   .faq__answer p { font-size: 14px; line-height: 22px; padding-bottom: 16px; }
 
-  /* Buttons — all buttons same mobile treatment */
-  .btn { width: 100%; max-width: 280px; }
+  /* Buttons — CTA buttons full-width on mobile, hero buttons stay auto */
+  .cta__buttons .btn { width: 100%; max-width: 280px; }
 
   /* Footer */
   .footer { padding: 48px 16px 16px; }
@@ -1817,7 +1842,7 @@ a { text-decoration: none; color: inherit; }
   .contact-hero__content { width: 100%; max-width: 100%; }
   .contact-hero__visual { width: 100%; max-width: 360px; height: 260px; align-self: center; }
   .contact-hero__subtitle { font-size: 16px; line-height: 22px; }
-  .contact-hero__buttons { flex-direction: column; align-items: center; }
+  .contact-hero__buttons { flex-direction: column; align-items: flex-start; }
 
   /* Contact Form */
   .contact-form-section__heading { font-size: 32px; line-height: 32px; }
