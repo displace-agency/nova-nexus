@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════
-   Nova Nexus — Web Components
+   Nova Nexus Capital — Web Components
    Reusable, stamp-out components.
    Load BEFORE scripts.js so expanded DOM is ready for GSAP.
    ══════════════════════════════════════════════ */
@@ -102,7 +102,7 @@ class NovaNavbar extends HTMLElement {
     nav.innerHTML = `
       <div class="navbar__inner">
         <a href="index.html" class="navbar__logo">
-          <img src="images/logo.svg" alt="Nova Nexus" width="146" height="32">
+          <img src="images/logo.svg" alt="Nova Nexus Capital" width="146" height="32">
         </a>
         <div class="navbar__links">
           <a href="index.html" class="navbar__link">Home</a>
@@ -131,7 +131,7 @@ class NovaFooter extends HTMLElement {
           <img src="images/hero-nexus.png" alt="">
         </div>
         <div class="footer__brand">
-          <h2 class="footer__brand-name">Nova Nexus</h2>
+          <h2 class="footer__brand-name">Nova Nexus Capital</h2>
           <p class="footer__brand-desc">Facilitamos la adopción de tecnología de clase mundial en industrias estratégicas.</p>
         </div>
         <nav class="footer__nav">
@@ -158,7 +158,7 @@ class NovaFooter extends HTMLElement {
           </div>
         </nav>
         <div class="footer__bottom">
-          <span class="footer__copyright">@2026 NOVA NEXUS. All Rights Reserved. • <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></span>
+          <span class="footer__copyright">@2026 NOVA NEXUS CAPITAL. All Rights Reserved. • <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></span>
         </div>
       </div>
     `;

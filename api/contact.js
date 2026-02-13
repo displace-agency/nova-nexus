@@ -74,7 +74,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Nova Nexus <novanexus@mail.displace.agency>',
+        from: 'Nova Nexus Capital <novanexus@mail.displace.agency>',
         to: [
           'rodrigolobo1959@gmail.com',
           'fdo.decastro@gmail.com',
