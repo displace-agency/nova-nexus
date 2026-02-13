@@ -152,15 +152,8 @@ class NovaFooter extends HTMLElement {
           <div class="footer__nav-col">
             <span class="footer__nav-label">/CONTACT</span>
             <div class="footer__nav-links">
-              <a href="mailto:contacto@novanexus.cl">contacto@novanexus.cl</a>
-              <a href="#">Santiago, Chile</a>
-            </div>
-          </div>
-          <div class="footer__nav-col">
-            <span class="footer__nav-label">/FOLLOW US</span>
-            <div class="footer__nav-links">
-              <a href="#">X/Twitter</a>
-              <a href="#">LinkedIn</a>
+              <a href="mailto:contact@novanexuscapital.com">contact@novanexuscapital.com</a>
+              <span>Santiago, Chile</span>
             </div>
           </div>
         </nav>
