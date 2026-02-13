@@ -11,7 +11,7 @@
   <link rel="canonical" href="https://nova-nexus-displace-agencys-projects.vercel.app/contact.html">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
@@ -230,13 +230,23 @@
         btn.disabled = true;
         btn.querySelector('span:first-child').textContent = 'Enviando...';
 
-        // Simulate send (replace with real API endpoint)
-        setTimeout(() => {
-          console.log('Form data:', data);
+        // Send to Resend via serverless function
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(res => {
+          if (!res.ok) throw new Error('Error al enviar');
           form.style.display = 'none';
           successEl.classList.add('contact-form__success--visible');
           gsap.from(successEl, { y: 20, opacity: 0, duration: 0.6, ease: 'power2.out' });
-        }, 800);
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btn.querySelector('span:first-child').textContent = 'Contactar';
+          alert('Hubo un error al enviar tu mensaje. Por favor intenta de nuevo.');
+        });
       });
     }
   </script>
